@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- Removed duplicate viewport meta tag -->
+    <title>Dhaval Bhavsar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="icon" type="image/jpg" href="images/favicon.jpg" />
+
+    <style>
+        /* Global Background Animation */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            color: #ffffff;
+            background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #0f2027);
+            background-size: 400% 400%;
+            animation: globalBgAnim 20s ease infinite;
+        }
+
+        @keyframes globalBgAnim {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #00ffff;
+            font-weight: bold;
+            font-size: 1.5rem;
+            border-color: white
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border-color: white
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #00ffff;
+        }
+
+        /* Intro Content */
+        .content {
+            text-align: center;
+            padding: 80px 20px;
+            animation: fadeIn 2s ease;
+        }
+
+        .content p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            background: linear-gradient(-45deg, #ffffff, #00ffff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 500;
+        }
+
+        .intro-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            padding: 60px 20px;
+        }
+
+        .intro-image img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 4px solid #00ffff;
+            object-fit: cover;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+        }
+
+        .intro-text {
+            max-width: 500px;
+            text-align: left;
+        }
+
+        .intro-text h1 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            background: linear-gradient(-45deg, #ffffff, #00ffff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: textColorFlow 6s ease infinite;
+        }
+
+
+        /* Projects Section */
+        .projects-section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .projects-section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .project-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #fff;
+            width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+        }
+
+        .project-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+            background: linear-gradient(-45deg, #ffffff, #00ffff);
+            background-size: 400% 400%;
+            animation: textColorFlow 6s ease infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @keyframes textColorFlow {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 10px;
+            border: 2px solid #00ffff;
+            border-radius: 8px;
+            background-color: #0a0a0a;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .contact-form button {
+            padding: 12px;
+            background-color: #00ffff;
+            border: none;
+            border-radius: 8px;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #00d0d0;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            animation: fadeInFooter 2s ease;
+        }
+
+        @keyframes fadeInFooter {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .social-links a {
+            color: #ffffff;
+            margin: 0 12px;
+            font-size: 1.6rem;
+            display: inline-block;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #00ffff;
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .projects-container {
+                flex-direction: column;
+            }
+        }
+        .rate-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(-45deg, #000000, #002222, #003333);
+  background-size: 400% 400%;
+  animation: bgRate 10s ease infinite;
+  color: #ffffff;
+}
+
+@keyframes bgRate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.star-rating {
+  font-size: 2.5rem;
+  color: #ffffff88;
+  cursor: pointer;
+}
+
+.star-rating .star:hover,
+.star-rating .star.hovered,
+.star-rating .star.selected {
+  color: #00ffff;
+  transition: color 0.3s;
+}
+
+.rating-output {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #00ffff;
+}
+/* Mobile view */
+@media screen and (max-width: 768px) {
+
+  .intro-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .intro-text {
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .intro-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .intro-image img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .project-card {
+    padding: 15px;
+    font-size: 1rem;
+  }
+
+  .form-container {
+    padding: 20px;
+  }
+
+  .form-container form input,
+  .form-container form textarea {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .rate-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .star-rating {
+    font-size: 2rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+}
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px 10px;
+}
+.container, .intro-container, .projects-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+    </style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="images/dhaval.jpg" alt="DB Logo" />
+            <span>Dhaval Bhavsar</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Intro -->
+    <div class="content" id="home">
+        <div class="intro-align-right">
+            <div class="intro-container">
+                <div class="intro-image">
+                    <img src="images/dhaval.jpg" alt="Dhaval Bhavsar" />
+                </div>
+                <div class="intro-text">
+                    <h1>Frontend Developer</h1>
+                    <p>
+                        Hello! I'm <strong>Dhaval Bhavsar</strong>, a passionate and dedicated Frontend Developer.<br />
+                        I specialize in building responsive, user-friendly websites using modern web technologies like
+                        <strong>HTML, CSS</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <h2>My Projects</h2>
+        <div class="projects-container">
+            <a class="project-card" href="https://github.com/Dhaval2234/Gym-Sphere" target="_blank" rel="noopener">
+                <h3>Gym Sphere</h3>
+                <p>A modern gym management website built with React, Vite, and Supabase.</p>
+            </a>
+            <a class="project-card" href="https://github.com/Dhaval2234/Weather-App" target="_blank" rel="noopener">
+                <h3>Weather App</h3>
+                <p>A responsive web app that shows real-time weather using the OpenWeatherMap API.</p>
+            </a>
+            <a class="project-card" href="https://github.com/Dhaval2234/Portfolio" target="_blank" rel="noopener">
+                <h3>Portfolio Website</h3>
+                <p>This portfolio site made with HTML, CSS, and responsive design principles.</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Ask Question</h2>
+        <form class="contact-form" action="mailto:dhavalbhavsar2004@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://github.com/Dhaval2234" target="_blank" rel="noopener" title="GitHub Profile"><i
+                    class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/dhaval-bhavsar-1bb962272" target="_blank" rel="noopener"
+                title="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:dhavalbhavsar2004@gmail.com" title="Send Email"><i class="fas fa-envelope"></i></a>
+            <a href="tel:+917043012826" title="call me"><i class="fas fa-phone"></i></a>
+        </div>
+    </footer>
+<section class="rate-section">
+  <h2>Rate My Website</h2>
+  <div class="star-rating">
+    <span class="star" data-rating="1">&#9733;</span>
+    <span class="star" data-rating="2">&#9733;</span>
+    <span class="star" data-rating="3">&#9733;</span>
+    <span class="star" data-rating="4">&#9733;</span>
+    <span class="star" data-rating="5">&#9733;</span>
+  </div>
+  <p class="rating-output">Click on the stars to rate!</p>
+</section>
+<script>
+  const stars = document.querySelectorAll(".star");
+  const output = document.querySelector(".rating-output");
+
+  stars.forEach((star, index) => {
+    star.addEventListener("mouseover", () => {
+      stars.forEach((s, i) => {
+        s.classList.toggle("hovered", i <= index);
+      });
+    });
+
+    star.addEventListener("mouseout", () => {
+      stars.forEach(s => s.classList.remove("hovered"));
+    });
+
+    star.addEventListener("click", () => {
+      stars.forEach((s, i) => {
+        s.classList.toggle("selected", i <= index);
+      });
+      output.textContent = `Thanks! You rated this site ${index + 1} star${index === 0 ? '' : 's'}!`;
+    });
+  });
+</script>
+
+</body>
+
+</html>
